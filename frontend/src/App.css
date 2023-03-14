@@ -1,0 +1,128 @@
+body {
+  font-family: arial, monospace, sans-serif;
+  background: #e5e5e5;
+}
+
+.label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #e5e5e5;
+}
+
+p {
+  font-size: small;
+  color: #fca311;
+}
+
+.submitButton {
+  margin-top: 10px;
+  background-color: #fca311;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.submitButton:hover {
+  background-color: #000000;
+}
+
+.addCommentButton {
+  background-color: #fca311;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.addCommentButton:hover {
+  background-color: #000000;
+}
+
+input,
+textarea {
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #ffffff;
+  outline: none;
+  color: #14213d;
+}
+
+.profilePhoto, .profilePhotoUpdate, .profilePhotoSearch, .profilePhotoHeader, .profilePhotoProfile {
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.profilePhotoUpdate {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.profilePhotoSearch {
+  width: 50px;
+  height: 50px;
+}
+
+.profilePhotoHeader {
+  width: 40px;
+  height: 40px;
+}
+
+.profilePhotoProfile {
+  width: 200px;
+  height: 200px;
+}
+
+ul::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+ul {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  list-style-type: none;
+}
+
+.addingButton {
+  background-color: #14213d;
+  color: #e5e5e5;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.addingButton:hover {
+  background-color: #fca311;
+}
+
+.checkbox {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1em auto;
+      grid-template-columns: 1em auto;
+  gap: 0.5em;
+}
+
+.post {
+  min-width: 300px;
+}
+
+strong {
+  color: #14213d;
+  width: 200px;
+}
+
+.add {
+  min-width: 275px;
+}
+/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,128 @@
+// $dark: #463F3A;
+// $medium: #8A817C;
+// $light: #BCB8B1;
+// $whity: #F4F3EE;
+// $pinky: #E0AFA0;
+
+$dark: #000000;
+$medium: #14213d;
+$light: #e5e5e5;
+$whity: #ffffff;
+$pinky: #fca311;
+
+body {
+	font-family: arial, monospace, sans-serif;
+	background: $light;
+}
+.label {
+	display: flex;
+	flex-direction: column;
+	color: $light;
+}
+
+p {
+	font-size: small;
+	color: $pinky;
+}
+
+.submitButton {
+	margin-top: 10px;
+	background-color: $pinky;
+	color: $whity;
+	cursor: pointer;
+	&:hover {
+		background-color: $dark;
+	}
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.addCommentButton {
+	background-color: $pinky;
+	color: $whity;
+	cursor: pointer;
+	&:hover {
+		background-color: $dark;
+	}
+	border-radius: 5px;
+	padding: 5px;
+}
+
+input,
+textarea {
+	border-radius: 5px;
+	padding: 5px;
+	background-color: $whity;
+	outline: none;
+	color: $medium;
+}
+
+.profilePhoto {
+	border-radius: 50%;
+	object-fit: cover;
+}
+.profilePhotoUpdate {
+	@extend .profilePhoto;
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+}
+
+.profilePhotoSearch {
+	@extend .profilePhoto;
+	width: 50px;
+	height: 50px;
+}
+
+.profilePhotoHeader {
+	@extend .profilePhoto;
+	width: 40px;
+	height: 40px;
+}
+
+.profilePhotoProfile {
+	@extend .profilePhoto;
+	width: 200px;
+	height: 200px;
+}
+
+ul::-webkit-scrollbar {
+	display: none;
+}
+
+/* For IE, Edge and Firefox */
+ul {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	list-style-type: none;
+}
+
+.addingButton {
+	background-color: $medium;
+	color: $light;
+	cursor: pointer;
+	&:hover {
+		background-color: $pinky;
+	}
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.checkbox {
+	display: grid;
+	grid-template-columns: 1em auto;
+	gap: 0.5em;
+}
+
+.post {
+	min-width: 300px;
+}
+
+strong {
+	color: $medium;
+	width: 200px;
+}
+
+.add {
+	min-width: 275px;
+}
