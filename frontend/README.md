@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Some screens from front app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Login and Register components
 
-## Available Scripts
+![screen](/readmeImages/login.png)
 
-In the project directory, you can run:
+## Home page
 
-### `npm start`
+Here you can see your friends' posts.
+![screen](/readmeImages/home.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## User's Page
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![screen](/readmeImages/user.png)
 
-### `npm test`
+## Search Bar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can scroll it if you want :) Here you can find users by their name, invite them to be your friend, accept an invitation and see theri profile
 
-### `npm run build`
+![screen](/readmeImages/search.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Post
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Photo posts and status posts look very similar.
+I you liked a photo, the heart is full otherwise it's empty. You can click on "comments" and it directs you to the post page where you can see all comments and add your own.
+![screen](/readmeImages/post.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Adding post
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Adding photo post and status post look very similar. If you want your post to be private you have to check the checkbox. Otherwise it will be public.
+![screen](/readmeImages/adding.png)
