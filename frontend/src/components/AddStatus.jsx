@@ -16,14 +16,15 @@ function AddStatus() {
 		reset,
 		formState: {errors},
 	} = useForm({resolver: yupResolver(validationSchema)});
-	const addStatusURL = `${process.env.REACT_APP_ADD_STATUS}`;
+
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const onSubmit = async (values) => {
 		const body = {
 			text: values.status,
 			private: values.isPrivate,
 		};
 		await axios
-			.post(addStatusURL, body, {
+			.post(appURL + "/api/posts/addStatus", body, {
 				withCredentials: true,
 			})
 			.then(() => {

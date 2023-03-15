@@ -19,11 +19,11 @@ function SearchUsers() {
 	const [usersName, setUsersName] = useState("");
 	const [users, setUsers] = useState([]);
 
-	const SearchUsersURL = `${process.env.REACT_APP_SEARCH_USERS}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const axiosUsers = async () => {
 		await axios
 			.post(
-				SearchUsersURL,
+				appURL + "/api/otherusers",
 				{name: usersName},
 				{
 					withCredentials: true,
@@ -40,13 +40,11 @@ function SearchUsers() {
 			});
 	};
 	const debouncedAxiosUsers = debounce(axiosUsers, 500);
-
-	const sendRequestURL = `${process.env.REACT_APP_SEND_REQUEST}`;
 	const handleRequest = async (e) => {
 		const id = e.currentTarget.id;
 		await axios
 			.post(
-				sendRequestURL,
+				appURL + "/api/otherusers/sendrequest",
 				{otherId: id},
 				{
 					withCredentials: true,
@@ -65,12 +63,12 @@ function SearchUsers() {
 				console.log("Error", error);
 			});
 	};
-	const acceptRequestURL = `${process.env.REACT_APP_ACCEPT_REQUEST}`;
+
 	const acceptHandler = async (e) => {
 		const id = e.currentTarget.id;
 		await axios
 			.post(
-				acceptRequestURL,
+				appURL + "/api/otherusers/acceptrequest",
 				{otherId: id},
 				{
 					withCredentials: true,

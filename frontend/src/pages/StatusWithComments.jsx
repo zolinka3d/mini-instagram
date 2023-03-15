@@ -14,10 +14,10 @@ function StatusWithComments() {
 
 	const {register, handleSubmit, reset} = useForm();
 
-	const getStatusURL = `${process.env.REACT_APP_GET_STATUS}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const getStauts = async () => {
 		await axios
-			.get(getStatusURL + id, {
+			.get(appURL + "/api/posts/getStatus/" + id, {
 				withCredentials: true,
 			})
 			.then((res) => {
@@ -28,10 +28,9 @@ function StatusWithComments() {
 			});
 	};
 
-	const getStatusCommentsURL = `${process.env.REACT_APP_GETSTATUSCOMMENTS}`;
 	const getStatusComments = async () => {
 		await axios
-			.get(getStatusCommentsURL + id + `/comments`, {
+			.get(appURL + "/api/posts/getStatus/" + id + `/comments`, {
 				withCredentials: true,
 			})
 			.then((res) => {
@@ -42,11 +41,10 @@ function StatusWithComments() {
 			});
 	};
 
-	const sendStatusCommentURL = `${process.env.REACT_APP_SENDSTATUSCOMMENT}`;
 	const onSubmit = async (data) => {
 		await axios
 			.post(
-				sendStatusCommentURL + id + `/comments`,
+				appURL + "/api/posts/getStatus/" + id + `/comments`,
 				{
 					text: data.comment,
 				},

@@ -22,14 +22,15 @@ function LoginForm() {
 
 	const navigate = useNavigate();
 
-	const loginURL = `${process.env.REACT_APP_LOGIN}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
+
 	const onSubmit = async (values) => {
 		const body = {
 			email: values.email,
 			password: values.password,
 		};
 		await axios
-			.post(loginURL, body, {
+			.post(appURL + "/api/users/login", body, {
 				withCredentials: true,
 			})
 			.then((res) => {

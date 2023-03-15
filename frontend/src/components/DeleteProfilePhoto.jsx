@@ -7,11 +7,11 @@ function DeleteProfilePhoto() {
 	const {userData, setUserData} = useContext(ContextApi);
 	const {register, handleSubmit, unregister} = useForm();
 
-	const deletePhotoURL = `${process.env.REACT_APP_DELETE_PROFILE_PHOTO}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const onSubmit = async (data) => {
 		if (data.confirmDelete) {
 			await axios
-				.delete(deletePhotoURL, {
+				.delete(appURL + "/api/users/deleteProfilePhoto", {
 					withCredentials: true,
 				})
 				.then((res) => {

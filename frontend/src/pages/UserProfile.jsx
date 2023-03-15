@@ -20,11 +20,10 @@ function UserProfile() {
 	const dispatch = useDispatch();
 	const {added} = useContext(ContextApi);
 
-	const url = `${process.env.REACT_APP_GET_STATUSES_FROM_OTHER_USER_URL}`;
-
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const getStatuses = async () => {
 		await axios
-			.get(url + id, {
+			.get(appURL + "/api/posts/getStatusesFromOtherUser/" + id, {
 				withCredentials: true,
 			})
 			.then((response) => {
@@ -35,10 +34,9 @@ function UserProfile() {
 			});
 	};
 
-	const getPhotosFromOtherUserURL = `${process.env.REACT_APP_GET_PHOTOS_FROM_OTHER_USER_URL}`;
 	const getPhotos = async () => {
 		await axios
-			.get(getPhotosFromOtherUserURL + id, {
+			.get(appURL + "/api/posts/getPhotoPostsFromOtherUser/" + id, {
 				withCredentials: true,
 			})
 			.then((response) => {
@@ -49,10 +47,9 @@ function UserProfile() {
 			});
 	};
 
-	const getOtherUserInfoURL = `${process.env.REACT_APP_GET_OTHER_USER_INFO_URL}`;
 	const getOtherUserInfoForProfile = async () => {
 		await axios
-			.get(getOtherUserInfoURL + id, {
+			.get(appURL + "/api/otherusers/getotheruserinfo/" + id, {
 				withCredentials: true,
 			})
 			.then((response) => {

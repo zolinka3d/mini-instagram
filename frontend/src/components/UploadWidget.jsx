@@ -7,10 +7,10 @@ function UploadWidget() {
 
 	const {register, handleSubmit} = useForm();
 
-	const gets3Url = `${process.env.REACT_APP_GET_S3}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const onSubmit = async (values) => {
 		const file = values.file[0];
-		const {url} = await fetch(gets3Url).then((res) => res.json());
+		const {url} = await fetch(appURL + "/api/users/s3Url").then((res) => res.json());
 		console.log(values.file[0]);
 
 		// post the image direclty to the s3 bucket

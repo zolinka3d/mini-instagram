@@ -23,12 +23,11 @@ function AddPhoto() {
 		reset,
 	} = useForm({resolver: yupResolver(validationSchema)});
 
-	const awsURL = `${process.env.REACT_APP_AWS}`;
-	const addPhotoURL = `${process.env.REACT_APP_ADD_PHOTO_POST}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 
 	const onSubmit = async (values) => {
 		const file = values.file[0];
-		const {url} = await fetch(awsURL).then((res) => res.json());
+		const {url} = await fetch(appURL + "/api/users/s3Url").then((res) => res.json());
 		await fetch(url, {
 			method: "PUT",
 			headers: {
@@ -48,7 +47,7 @@ function AddPhoto() {
 	const postPhoto = async () => {
 		await axios
 			.post(
-				addPhotoURL,
+				appURL + "/api/posts/addPhotoPost",
 				{
 					photo: imageUrl,
 					private: isPrivate,

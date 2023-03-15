@@ -17,12 +17,12 @@ function Header() {
 	const homeNavigate = () => {
 		navigate("/home");
 	};
-	const logoutURL = `${process.env.REACT_APP_LOGOUT}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const logout = async () => {
 		navigate("/");
 		await axios
 			.post(
-				logoutURL,
+				appURL + "/api/users/logout",
 				{},
 				{
 					withCredentials: true,
@@ -33,11 +33,11 @@ function Header() {
 				console.log("Error", error);
 			});
 	};
-	const getMeURL = `${process.env.REACT_APP_ME}`;
+
 	useEffect(() => {
 		const getUserPhoto = async () => {
 			await axios
-				.get(getMeURL, {
+				.get(appURL + "/api/users/me", {
 					withCredentials: true,
 				})
 				.then((res) => {

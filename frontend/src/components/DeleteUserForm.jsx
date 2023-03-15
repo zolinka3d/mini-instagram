@@ -7,11 +7,11 @@ function DeleteUserForm() {
 	const {register, handleSubmit, unregister} = useForm();
 	const navigate = useNavigate();
 
-	const deleteAccountURL = `${process.env.REACT_APP_DELETE_ACCOUNT}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const onSubmit = (data) => {
 		if (data.confirmDelete) {
 			axios
-				.delete(deleteAccountURL, {
+				.delete(appURL + "/api/users/deleteMe", {
 					withCredentials: true,
 				})
 				.then((res) => {

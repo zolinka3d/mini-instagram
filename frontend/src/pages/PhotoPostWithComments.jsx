@@ -25,20 +25,21 @@ function PhotoPostWithComments() {
 		mode: "onSubmit",
 	});
 
-	const getPhotoURL = `${process.env.REACT_APP_GETPHOTOPOST}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const getPhotoPost = async () => {
 		try {
-			const response = await axios.get(getPhotoURL + id, {withCredentials: true});
+			const response = await axios.get(appURL + "/api/posts/getPhotoPost/" + id, {
+				withCredentials: true,
+			});
 			setImage(response.data);
 		} catch (error) {
 			console.log("Error: ", error.message);
 		}
 	};
 
-	const getPhotoCommentsURL = `${process.env.REACT_APP_GETPHOTOPOSTCOMMENTS}`;
 	const getPhotoComments = async () => {
 		try {
-			const response = await axios.get(getPhotoCommentsURL + id + `/comments`, {
+			const response = await axios.get(appURL + "/api/posts/getPhotoPost/" + id + `/comments`, {
 				withCredentials: true,
 			});
 			setComments(response.data);
@@ -47,11 +48,10 @@ function PhotoPostWithComments() {
 		}
 	};
 
-	const sendPhotoCommentURL = `${process.env.REACT_APP_SENDPHOTOPOSTCOMMENT}`;
 	const onSubmit = async (data) => {
 		await axios
 			.post(
-				sendPhotoCommentURL + id + `/comments`,
+				appURL + "/api/posts/getPhotoPost/" + id + `/comments`,
 				{
 					text: data.comment,
 				},

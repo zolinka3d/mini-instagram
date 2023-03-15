@@ -29,10 +29,10 @@ function Gallery() {
 		setAddStatusClicked(false);
 	};
 
-	const getStatusesFromFriendsURL = `${process.env.REACT_APP_GET_STATUSES_FROM_FRIENDS}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const getStatuses = async () => {
 		await axios
-			.get(getStatusesFromFriendsURL, {
+			.get(appURL + "/api/posts/getStatusesFromFriends", {
 				withCredentials: true,
 			})
 			.then((res) => {
@@ -42,10 +42,9 @@ function Gallery() {
 				console.log("Error", error.message);
 			});
 	};
-	const getPhotosFromFriendsURL = `${process.env.REACT_APP_GET_PHOTOS_FROM_FRIENDS}`;
 	const getPhotos = async () => {
 		await axios
-			.get(getPhotosFromFriendsURL, {
+			.get(appURL + "/api/posts/getPhotoPostsFromFriends", {
 				withCredentials: true,
 			})
 			.then((res) => {

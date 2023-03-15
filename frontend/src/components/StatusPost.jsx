@@ -10,15 +10,14 @@ function StatusPost({status, IsItMyProfile}) {
 	const [likes, setLikes] = useState(status.likes);
 	const {added, setAdded} = useContext(ContextApi);
 
-	const likesStatusURL = `${process.env.REACT_APP_LIKES_STATUS}`;
-	const unlikeStatusURL = `${process.env.REACT_APP_UNLIKES_STATUS}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const handleLike = async () => {
 		setLikedByMe(!likedByMe);
 
 		if (!likedByMe) {
 			await axios
 				.post(
-					likesStatusURL + status.id,
+					appURL + "/api/posts/likesStatus/" + status.id,
 					{},
 					{
 						withCredentials: true,
@@ -32,7 +31,7 @@ function StatusPost({status, IsItMyProfile}) {
 				});
 		} else {
 			await axios
-				.delete(unlikeStatusURL + status.id, {
+				.delete(appURL + "/api/posts/unlikeStatus/" + status.id, {
 					withCredentials: true,
 				})
 				.then(() => {
@@ -45,9 +44,8 @@ function StatusPost({status, IsItMyProfile}) {
 	};
 
 	const deleteStatus = async () => {
-		const deleteStatusURL = `${process.env.REACT_APP_DELETE_STATUS}`;
 		await axios
-			.delete(deleteStatusURL + status.id, {
+			.delete(appURL + "/api/posts/deleteStatus/" + status.id, {
 				withCredentials: true,
 			})
 			.then((res) => {

@@ -10,12 +10,12 @@ function UpdateForm() {
 	const {register, handleSubmit} = useForm();
 	const [isUpdated, setIsUpdated] = React.useState(false);
 
-	const updadeMeURL = `${process.env.REACT_APP_UPDATEME}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 
 	const onSubmit = async (values) => {
 		await axios
 			.put(
-				updadeMeURL,
+				appURL + "/api/users/updateMe",
 				{
 					profilePhoto: userData.profilePhoto,
 					name: values.name.length > 0 ? values.name : userData.name,
@@ -33,13 +33,11 @@ function UpdateForm() {
 			});
 	};
 
-	const getMeURL = `${process.env.REACT_APP_ME}`;
 	const getMe = async () => {
 		await axios
-			.get(getMeURL, {withCredentials: true})
+			.get(appURL + "/api/users/me", {withCredentials: true})
 			.then((res) => {
 				setUserData(res.data);
-				console.log("it is doing something");
 			})
 			.catch((error) => {
 				console.log("Error", error.message);

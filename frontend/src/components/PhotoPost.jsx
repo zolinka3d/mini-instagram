@@ -10,15 +10,14 @@ function PicturePost({image, IsItMyProfile}) {
 	const [likes, setLikes] = useState(image.likes);
 	const {added, setAdded} = useContext(ContextApi);
 
-	const likesPhotoURL = `${process.env.REACT_APP_LIKES_PHOTO}`;
-	const unlikesPhotoURL = `${process.env.REACT_APP_UNLIKES_PHOTO}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const handleLike = async () => {
 		setLikedByMe(!likedByMe);
 
 		if (!likedByMe) {
 			await axios
 				.post(
-					likesPhotoURL + image.id,
+					appURL + "/api/posts/likesPhotoPost/" + image.id,
 					{},
 					{
 						withCredentials: true,
@@ -32,7 +31,7 @@ function PicturePost({image, IsItMyProfile}) {
 				});
 		} else {
 			await axios
-				.delete(unlikesPhotoURL + image.id, {
+				.delete(appURL + "/api/posts/unlikePhotoPost/" + image.id, {
 					withCredentials: true,
 				})
 				.then((res) => {
@@ -44,10 +43,9 @@ function PicturePost({image, IsItMyProfile}) {
 		}
 	};
 
-	const deletePhotoURL = `${process.env.REACT_APP_DELETE_PHOTO_POST}`;
 	const deletePhoto = async () => {
 		await axios
-			.delete(deletePhotoURL + image.id, {withCredentials: true})
+			.delete(appURL + "/api/posts/deletePhotoPost/" + image.id, {withCredentials: true})
 			.then((res) => {
 				setAdded(added - 1);
 			})

@@ -36,7 +36,7 @@ function RegisterForm() {
 		formState: {errors},
 	} = useForm({resolver: yupResolver(validationSchema)});
 
-	const registerURL = `${process.env.REACT_APP_REGISTER}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const onSubmit = async (values) => {
 		const body = {
 			name: values.userName,
@@ -45,7 +45,7 @@ function RegisterForm() {
 		};
 
 		await axios
-			.post(registerURL, body, {
+			.post(appURL + "/api/users", body, {
 				withCredentials: true,
 			})
 			.then((res) => {

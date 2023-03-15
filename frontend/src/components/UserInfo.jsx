@@ -6,7 +6,7 @@ import {useParams} from "react-router-dom";
 import gif from "../utils/loading-loading-forever.gif";
 
 function UserInfo({user}) {
-	const url_getFirendsBetween = `${process.env.REACT_APP_GET_FRIENDS_BETWEEN}`;
+	const appURL = `${process.env.REACT_APP_BACK}`;
 	const friendship = useSelector((state) => state.otheruser);
 	const dispatch = useDispatch();
 	const [friendsBetween, setFriendsBetween] = useState(0);
@@ -14,7 +14,7 @@ function UserInfo({user}) {
 	const {id} = useParams();
 	const getFriendsBetween = async () => {
 		await axios
-			.get(url_getFirendsBetween + id, {
+			.get(appURL + "/api/otherusers/howManyFriendsBetween/" + id, {
 				withCredentials: true,
 			})
 			.then((res) => {
